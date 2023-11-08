@@ -2,15 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Psyco Shop - Home</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWbQ78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>Psico Shop - Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/inventario.js"></script>
+  <script src="./js/home.js"></script>
 </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">E-commerce de cursos psicológicos en línea</a>
+        <a class="navbar-brand" href="#">Psico Shop</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,12 +20,6 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="shop.html">Tienda</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="home.html">Perfil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Carrito</a>
@@ -44,7 +40,7 @@
   </header>
   <main>
     <section class="container">
-      <h1>Inicio</h1>
+      <h1>Perfil</h1>
       <section class="row">
         <div class="col-md-12">
           <div class="card">
@@ -52,20 +48,81 @@
               <h2>Productos destacados</h2>
               <div class="row">
                 <div class="col-md-4">
-                  <img src="imagenes/psicologia-clinica.jpg" alt="Psicología clínica">
-                  <h3>Psicología clínica</h3>
-                  <p>Aprende sobre los trastornos mentales y cómo tratarlos.</p>
+                  <div align="center">
+                    <img src="img/psicologia-clinica.jpg" alt="Psicología clínica" width="150" height="150">
+                    <h3>Psicología clínica</h3>
+                    <p>Aprende sobre los trastornos mentales y cómo tratarlos.</p>
+                    <button type="button" class="btn btn-primary btn-add-cart" onclick="agregarProductoAlCarrito('Psicología clínica')">Agregar al carrito</button>
+                  </div>
                 </div>
                 <div class="col-md-4">
-                  <img src="imagenes/psicologia-del-desarrollo.jpg" alt="Psicología del desarrollo">
-                  <h3>Psicología del desarrollo</h3>
-                  <p>Aprende sobre el crecimiento y el cambio psicológico a lo largo de la vida.</p>
+                  <div align="center">
+                    <img src="img/psicologia-del-desarrollo.jpg" alt="Psicología del desarrollo" width="150" height="150" align="center">
+                    <h3>Psicología del desarrollo</h3>
+                    <p>Aprende sobre el crecimiento y el cambio psicológico a lo largo de la vida.</p>
+                    <button type="button" class="btn btn-primary btn-add-cart" onclick="agregarProductoAlCarrito('Psicología clínica')">Agregar al carrito</button>
+                  </div>
                 </div>
                 <div class="col-md-4">
-                  <img src="imagenes/psicologia-social.jpg" alt="Psicología social">
-                  <h3>Psicología social</h3>
-                  <p>Aprende sobre la interacción entre las personas y los grupos.</p>
+                  <div align="center">
+                    <img src="img/psicologia-social.jpg" alt="Psicología social" width="150" height="150" align="center">
+                    <h3>Psicología social</h3>
+                    <p>Aprende sobre la interacción entre las personas y los grupos.</p>
+                    <button type="button" class="btn btn-primary btn-add-cart" onclick="agregarProductoAlCarrito('Psicología clínica')">Agregar al carrito</button>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h2>Carrito de compras</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Psicología clínica</td>
+                    <td>1</td>
+                    <td>$100</td>
+                    <td>$100</td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-eliminar" onclick="eliminarProductoDelCarrito('Psicología clínica')">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Psicología del desarrollo</td>
+                    <td>1</td>
+                    <td>$50</td>
+                    <td>$50</td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-eliminar" onclick="eliminarProductoDelCarrito('Psicología clínica')">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Psicología social</td>
+                    <td>1</td>
+                    <td>$75</td>
+                    <td>$75</td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-eliminar" onclick="eliminarProductoDelCarrito('Psicología clínica')">Eliminar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="total">
+                <h5>Total: $225</h5>
               </div>
             </div>
           </div>
@@ -73,10 +130,6 @@
       </section>
     </section>
   </main>
-  <footer>
-    <div class="container">
-      <p>Copyright &copy; 2023</p>
-    </div>
-  </footer>
 </body>
 </html>
+

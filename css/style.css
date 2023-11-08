@@ -9,6 +9,11 @@ header {
   padding: 20px;
 }
 
+.navbar {/
+  text-align: left;
+  flex-direction: row-reverse;
+}
+
 nav {
   background-color: #000;
   color: #fff;
@@ -72,4 +77,38 @@ main {
   .container {
     width: 100%;
   }
+}
+
+/* Estilos del carrito de compras */
+
+.carrito {
+  margin-bottom: 20px;
+}
+
+.carrito table {
+  width: 100%;
+}
+
+.carrito table thead th {
+  text-align: left;
+}
+
+.carrito table tbody tr td {
+  padding: 5px;
+}
+
+.carrito table tbody tr td:last-child {
+  width: 100px;
+}
+
+.carrito table tbody tr td button {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.carrito table tbody tr td button:hover {
+  background-color: #f00;
 }
